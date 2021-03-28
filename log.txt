@@ -1,0 +1,32 @@
+20:41:39 Log file opened 
+20:41:39 Program starting 
+20:41:39 Simulation Manager starting 
+20:41:39 Malfunction Manager starting 
+20:41:39 Race Manager starting 
+20:41:39 Team Manager starting 
+20:41:39 Team Manager starting 
+20:41:39 Team Manager starting 
+20:41:39 Team Manager starting 
+20:41:39 Team Manager starting 
+21:54:51 Log file opened 
+21:54:51 Creating shared memory 
+21:54:51 Program starting 
+21:54:51 Simulation Manager starting 
+21:54:51 Malfunction Manager starting 
+21:54:51 Race Manager starting 
+21:54:51 Team Manager starting 
+21:54:51 Team Manager starting 
+21:54:51 Team Manager starting 
+21:54:51 Team Manager starting 
+21:54:51 Team Manager starting 
+21:55:37 Log file opened 
+21:55:37 Creating shared memory 
+21:55:37 Program starting 
+21:55:37 Simulation Manager starting 
+21:55:37 Malfunction Manager starting 
+21:55:37 Race Manager starting 
+21:55:37 Team Manager starting 
+21:55:37 Team Manager starting 
+21:55:37 Team Manager starting 
+21:55:37 Team Manager starting 
+21:55:37 Team Manager starting 
