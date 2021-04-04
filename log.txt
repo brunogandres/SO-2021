@@ -1,32 +1,1130 @@
-20:41:39 Log file opened 
-20:41:39 Program starting 
-20:41:39 Simulation Manager starting 
-20:41:39 Malfunction Manager starting 
-20:41:39 Race Manager starting 
-20:41:39 Team Manager starting 
-20:41:39 Team Manager starting 
-20:41:39 Team Manager starting 
-20:41:39 Team Manager starting 
-20:41:39 Team Manager starting 
-21:54:51 Log file opened 
-21:54:51 Creating shared memory 
-21:54:51 Program starting 
-21:54:51 Simulation Manager starting 
-21:54:51 Malfunction Manager starting 
-21:54:51 Race Manager starting 
-21:54:51 Team Manager starting 
-21:54:51 Team Manager starting 
-21:54:51 Team Manager starting 
-21:54:51 Team Manager starting 
-21:54:51 Team Manager starting 
-21:55:37 Log file opened 
-21:55:37 Creating shared memory 
-21:55:37 Program starting 
-21:55:37 Simulation Manager starting 
-21:55:37 Malfunction Manager starting 
-21:55:37 Race Manager starting 
-21:55:37 Team Manager starting 
-21:55:37 Team Manager starting 
-21:55:37 Team Manager starting 
-21:55:37 Team Manager starting 
-21:55:37 Team Manager starting 
+15:15:07 Log file opened 
+15:16:06 Log file opened 
+15:16:22 Log file opened 
+15:16:31 Log file opened 
+15:18:27 Log file opened 
+15:18:36 Log file opened 
+15:22:38 Log file opened 
+15:22:38 Creating shared memory 
+15:22:38 Program starting 
+15:22:38 Simulation Manager starting 
+15:22:38 Malfunction Manager starting 
+15:22:38 Race Manager starting 
+15:22:38 Team Manager starting 
+15:22:38 Team Manager starting 
+15:22:38 Team Manager starting 
+15:22:38 Team Manager starting 
+15:22:38 Team Manager starting 
+15:24:52 Log file opened 
+15:24:52 Creating shared memory 
+15:24:52 Program starting 
+15:24:52 Simulation Manager starting 
+15:24:52 Malfunction Manager starting 
+15:24:52 Race Manager starting 
+15:24:52 Team Manager starting 
+15:24:52 Team Manager starting 
+15:24:52 Team Manager starting 
+15:24:53 Team Manager starting 
+15:24:53 Team Manager starting 
+15:25:43 Log file opened 
+15:25:43 Creating shared memory 
+15:25:43 Program starting 
+15:25:43 Simulation Manager starting 
+15:25:43 Malfunction Manager starting 
+15:25:43 Race Manager starting 
+15:25:43 Team Manager starting 
+15:25:43 Team Manager starting 
+15:25:43 Team Manager starting 
+15:25:43 Team Manager starting 
+15:25:43 Team Manager starting 
+15:27:22 Log file opened 
+15:27:22 Creating shared memory 
+15:27:22 Program starting 
+15:27:22 Simulation Manager starting 
+15:27:22 Malfunction Manager starting 
+15:27:22 Race Manager starting 
+15:27:22 Team Manager starting 
+15:27:22 Team Manager starting 
+15:27:22 Team Manager starting 
+15:27:22 Team Manager starting 
+15:27:22 Team Manager starting 
+15:27:48 Log file opened 
+15:27:48 Creating shared memory 
+15:27:48 Program starting 
+15:27:48 Simulation Manager starting 
+15:27:48 Malfunction Manager starting 
+15:27:48 Race Manager starting 
+15:27:48 Team Manager starting 
+15:27:48 Team Manager starting 
+15:27:48 Team Manager starting 
+15:27:49 Team Manager starting 
+15:27:49 Team Manager starting 
+15:28:05 Log file opened 
+15:28:05 Creating shared memory 
+15:28:05 Program starting 
+15:28:05 Simulation Manager starting 
+15:28:05 Malfunction Manager starting 
+15:28:05 Race Manager starting 
+15:28:05 Team Manager starting 
+15:28:06 Team Manager starting 
+15:28:06 Team Manager starting 
+15:28:06 Team Manager starting 
+15:28:06 Team Manager starting 
+15:31:46 Log file opened 
+15:31:46 Creating shared memory 
+15:31:46 Program starting 
+15:31:46 Simulation Manager starting 
+15:31:46 Malfunction Manager starting 
+15:31:46 Race Manager starting 
+15:31:46 Team Manager starting 
+15:31:46 Team Manager starting 
+15:31:46 Team Manager starting 
+15:31:46 Team Manager starting 
+15:31:47 Team Manager starting 
+15:32:27 Log file opened 
+15:32:27 Creating shared memory 
+15:32:27 Program starting 
+15:32:27 Simulation Manager starting 
+15:32:27 Malfunction Manager starting 
+15:32:27 Race Manager starting 
+15:32:27 Team Manager starting 
+15:32:27 Team Manager starting 
+15:32:27 Team Manager starting 
+15:32:27 Team Manager starting 
+15:32:27 Team Manager starting 
+15:33:06 Log file opened 
+15:33:06 Creating shared memory 
+15:33:06 Program starting 
+15:33:06 Simulation Manager starting 
+15:33:06 Malfunction Manager starting 
+15:33:06 Race Manager starting 
+15:33:06 Team Manager starting 
+15:33:06 Team Manager starting 
+15:33:06 Team Manager starting 
+15:33:06 Team Manager starting 
+15:33:07 Team Manager starting 
+15:37:54 Log file opened 
+15:37:54 Creating shared memory 
+15:37:54 Program starting 
+15:37:54 Simulation Manager starting 
+15:37:54 Malfunction Manager starting 
+15:37:54 Race Manager starting 
+15:37:54 Team Manager starting 
+15:37:54 Team Manager starting 
+15:37:55 Team Manager starting 
+15:37:55 Team Manager starting 
+15:37:55 Team Manager starting 
+15:38:19 Log file opened 
+15:38:19 Creating shared memory 
+15:38:19 Program starting 
+15:38:19 Simulation Manager starting 
+15:38:19 Malfunction Manager starting 
+15:38:19 Race Manager starting 
+15:38:19 Team Manager starting 
+15:38:19 Team Manager starting 
+15:38:19 Team Manager starting 
+15:38:20 Team Manager starting 
+15:38:20 Team Manager starting 
+15:38:45 Log file opened 
+15:38:45 Creating shared memory 
+15:38:45 Program starting 
+15:38:45 Simulation Manager starting 
+15:38:45 Malfunction Manager starting 
+15:38:45 Race Manager starting 
+15:38:45 Team Manager starting 
+15:38:45 Team Manager starting 
+15:38:45 Team Manager starting 
+15:38:45 Team Manager starting 
+15:38:45 Team Manager starting 
+15:42:23 Log file opened 
+15:42:23 Creating shared memory 
+15:42:23 Program starting 
+15:42:23 Simulation Manager starting 
+15:42:23 Malfunction Manager starting 
+15:42:23 Race Manager starting 
+15:42:23 Team Manager starting 
+15:42:23 Team Manager starting 
+15:42:23 Team Manager starting 
+15:42:23 Team Manager starting 
+15:42:23 Team Manager starting 
+15:47:32 Log file opened 
+15:47:32 Creating shared memory 
+15:47:32 Program starting 
+15:47:32 Simulation Manager starting 
+15:47:32 Malfunction Manager starting 
+15:47:32 Race Manager starting 
+15:47:32 Team Manager starting 
+15:47:32 Team Manager starting 
+15:47:32 Team Manager starting 
+15:47:32 Team Manager starting 
+15:47:32 Team Manager starting 
+15:50:37 Log file opened 
+15:50:37 Creating shared memory 
+15:50:37 Program starting 
+15:50:37 Simulation Manager starting 
+15:50:37 Malfunction Manager starting 
+15:50:37 Race Manager starting 
+15:50:37 Team Manager starting 
+15:50:37 Team Manager starting 
+15:50:37 Team Manager starting 
+15:50:37 Team Manager starting 
+15:50:37 Team Manager starting 
+16:23:54 Log file opened 
+16:23:54 Creating shared memory 
+16:23:54 Program starting 
+16:23:54 Simulation Manager starting 
+16:23:54 Malfunction Manager starting 
+16:23:54 Race Manager starting 
+16:23:54 Team Manager starting 
+16:23:54 Team Manager starting 
+16:23:54 Team Manager starting 
+16:23:54 Team Manager starting 
+16:23:54 Team Manager starting 
+16:41:46 Log file opened 
+16:41:46 Creating shared memory 
+16:41:46 Program starting 
+16:41:46 Simulation Manager starting 
+16:42:08 Log file opened 
+16:42:08 Creating shared memory 
+16:42:08 Program starting 
+16:42:08 Simulation Manager starting 
+16:42:33 Log file opened 
+16:42:33 Creating shared memory 
+16:42:33 Program starting 
+16:42:33 Simulation Manager starting 
+16:42:33 Malfunction Manager starting 
+16:42:33 Race Manager starting 
+16:42:33 Team Manager starting 
+16:42:33 Team Manager starting 
+16:42:33 Team Manager starting 
+16:42:33 Team Manager starting 
+16:42:33 Team Manager starting 
+16:43:14 Log file opened 
+16:43:14 Creating shared memory 
+16:43:14 Program starting 
+16:43:14 Simulation Manager starting 
+16:45:41 Log file opened 
+16:45:41 Creating shared memory 
+16:45:41 Program starting 
+16:45:41 Simulation Manager starting 
+16:52:10 Log file opened 
+16:52:10 Creating shared memory 
+16:52:10 Program starting 
+16:52:10 Simulation Manager starting 
+16:52:55 Log file opened 
+16:52:55 Creating shared memory 
+16:52:55 Program starting 
+16:52:55 Simulation Manager starting 
+16:52:55 Malfunction Manager starting 
+16:52:55 Race Manager starting 
+16:52:55 Team Manager starting 
+16:52:55 Team Manager starting 
+16:52:55 Team Manager starting 
+16:52:55 Team Manager starting 
+16:52:55 Team Manager starting 
+16:53:09 Log file opened 
+16:53:09 Creating shared memory 
+16:53:09 Program starting 
+16:53:09 Simulation Manager starting 
+16:53:09 Malfunction Manager starting 
+16:53:09 Race Manager starting 
+16:53:09 Team Manager starting 
+16:53:09 Team Manager starting 
+16:53:09 Team Manager starting 
+16:53:09 Team Manager starting 
+16:53:09 Team Manager starting 
+16:56:48 Log file opened 
+16:56:48 Creating shared memory 
+16:56:48 Program starting 
+16:56:48 Simulation Manager starting 
+16:56:48 Malfunction Manager starting 
+16:56:48 Race Manager starting 
+16:56:48 Team Manager starting 
+16:56:48 Team Manager starting 
+16:56:48 Team Manager starting 
+16:56:48 Team Manager starting 
+16:56:48 Team Manager starting 
+16:57:44 Log file opened 
+16:57:44 Creating shared memory 
+16:57:44 Program starting 
+16:57:44 Simulation Manager starting 
+17:01:07 Log file opened 
+17:01:07 Creating shared memory 
+17:01:07 Program starting 
+17:01:07 Simulation Manager starting 
+17:03:41 Log file opened 
+17:03:41 Creating shared memory 
+17:03:41 Program starting 
+17:03:41 Simulation Manager starting 
+17:03:59 Log file opened 
+17:03:59 Creating shared memory 
+17:03:59 Program starting 
+17:03:59 Simulation Manager starting 
+17:04:02 Log file opened 
+17:04:02 Creating shared memory 
+17:04:02 Program starting 
+17:04:02 Simulation Manager starting 
+17:04:10 Log file opened 
+17:04:10 Creating shared memory 
+17:04:10 Program starting 
+17:04:10 Simulation Manager starting 
+17:10:40 Log file opened 
+17:10:40 Creating shared memory 
+17:10:40 Program starting 
+17:10:40 Simulation Manager starting 
+17:12:04 Log file opened 
+17:12:04 Creating shared memory 
+17:12:04 Program starting 
+17:12:04 Simulation Manager starting 
+17:12:04 Malfunction Manager starting 
+17:12:04 Race Manager starting 
+17:12:04 Team Manager starting 
+17:12:04 Team Manager starting 
+17:12:04 Team Manager starting 
+17:12:04 Team Manager starting 
+17:12:04 Team Manager starting 
+17:24:50 Log file opened 
+17:24:50 Creating shared memory 
+17:24:50 Program starting 
+17:24:50 Simulation Manager starting 
+17:24:50 Malfunction Manager starting 
+17:24:50 Race Manager starting 
+17:24:50 Team Manager starting 
+17:24:50 Team Manager starting 
+17:24:50 Team Manager starting 
+17:24:50 Team Manager starting 
+17:24:50 Team Manager starting 
+17:45:47 Log file opened 
+17:45:47 Creating shared memory 
+17:45:47 Program starting 
+17:45:47 Simulation Manager starting 
+17:45:47 Malfunction Manager starting 
+17:45:47 Race Manager starting 
+17:45:47 Team Manager starting 
+17:45:47 Team Manager starting 
+17:45:47 Team Manager starting 
+17:45:47 Team Manager starting 
+17:45:47 Team Manager starting 
+17:52:09 Log file opened 
+17:52:09 Creating shared memory 
+17:52:09 Program starting 
+17:52:09 Simulation Manager starting 
+17:52:21 Log file opened 
+17:52:21 Creating shared memory 
+17:52:21 Program starting 
+17:52:21 Simulation Manager starting 
+18:01:12 Log file opened 
+18:01:12 Creating shared memory 
+18:01:12 Program starting 
+18:01:12 Simulation Manager starting 
+18:01:12 Malfunction Manager starting 
+18:01:12 Race Manager starting 
+18:01:12 Team Manager starting 
+18:01:12 Team Manager starting 
+18:01:12 Team Manager starting 
+18:01:12 Team Manager starting 
+18:01:12 Team Manager starting 
+18:11:29 Log file opened 
+18:11:29 Creating shared memory 
+18:11:29 Program starting 
+18:11:29 Simulation Manager starting 
+18:11:29 Malfunction Manager starting 
+18:11:29 Race Manager starting 
+18:11:29 Team Manager starting 
+18:11:29 Team Manager starting 
+18:11:29 Team Manager starting 
+18:11:29 Team Manager starting 
+18:11:29 Team Manager starting 
+18:15:43 Log file opened 
+18:15:43 Creating shared memory 
+18:15:43 Program starting 
+18:15:43 Simulation Manager starting 
+18:15:43 Malfunction Manager starting 
+18:15:43 Race Manager starting 
+18:15:43 Team Manager starting 
+18:16:55 Log file opened 
+18:16:55 Creating shared memory 
+18:16:55 Program starting 
+18:16:55 Simulation Manager starting 
+18:16:55 Malfunction Manager starting 
+18:16:55 Race Manager starting 
+18:16:55 Team Manager starting 
+18:16:55 Team Manager starting 
+18:16:55 Team Manager starting 
+18:16:55 Team Manager starting 
+18:16:55 Team Manager starting 
+18:18:40 Log file opened 
+18:18:40 Creating shared memory 
+18:18:40 Program starting 
+18:18:40 Simulation Manager starting 
+18:18:40 Malfunction Manager starting 
+18:18:40 Race Manager starting 
+18:18:40 Team Manager starting 
+18:18:40 Team Manager starting 
+18:18:40 Team Manager starting 
+18:18:40 Team Manager starting 
+18:18:40 Team Manager starting 
+18:19:17 Log file opened 
+18:19:17 Creating shared memory 
+18:19:17 Program starting 
+18:19:17 Simulation Manager starting 
+18:19:17 Malfunction Manager starting 
+18:19:17 Race Manager starting 
+18:19:17 Team Manager starting 
+18:19:17 Team Manager starting 
+18:19:17 Team Manager starting 
+18:19:17 Team Manager starting 
+18:19:17 Team Manager starting 
+18:19:50 Log file opened 
+18:19:50 Creating shared memory 
+18:19:50 Program starting 
+18:19:50 Simulation Manager starting 
+18:19:50 Malfunction Manager starting 
+18:19:50 Race Manager starting 
+18:19:50 Team Manager starting 
+18:19:50 Team Manager starting 
+18:19:50 Team Manager starting 
+18:19:50 Team Manager starting 
+18:19:50 Team Manager starting 
+18:20:46 Log file opened 
+18:20:46 Creating shared memory 
+18:20:46 Program starting 
+18:20:46 Simulation Manager starting 
+18:20:46 Malfunction Manager starting 
+18:20:46 Race Manager starting 
+18:20:46 Team Manager starting 
+18:20:46 Team Manager starting 
+18:20:46 Team Manager starting 
+18:20:46 Team Manager starting 
+18:20:46 Team Manager starting 
+18:25:23 Log file opened 
+18:25:23 Creating shared memory 
+18:25:23 Program starting 
+18:25:23 Simulation Manager starting 
+18:25:23 Malfunction Manager starting 
+18:25:23 Race Manager starting 
+18:25:23 Team Manager starting 
+18:25:23 Team Manager starting 
+18:25:23 Team Manager starting 
+18:25:23 Team Manager starting 
+18:25:23 Team Manager starting 
+18:26:30 Log file opened 
+18:26:30 Creating shared memory 
+18:26:30 Program starting 
+18:26:30 Simulation Manager starting 
+18:26:30 Malfunction Manager starting 
+18:26:30 Race Manager starting 
+18:26:30 Team Manager starting 
+18:26:30 Team Manager starting 
+18:26:30 Team Manager starting 
+18:26:30 Team Manager starting 
+18:26:30 Team Manager starting 
+18:28:36 Log file opened 
+18:28:36 Creating shared memory 
+18:28:36 Program starting 
+18:28:36 Simulation Manager starting 
+18:28:36 Malfunction Manager starting 
+18:28:36 Race Manager starting 
+18:28:36 Team Manager starting 
+18:28:36 Team Manager starting 
+18:28:36 Team Manager starting 
+18:28:36 Team Manager starting 
+18:28:36 Team Manager starting 
+18:44:57 Log file opened 
+18:44:57 Creating shared memory 
+18:44:57 Program starting 
+18:44:57 Simulation Manager starting 
+18:44:57 Malfunction Manager starting 
+18:44:57 Race Manager starting 
+18:44:57 Team Manager starting 
+18:44:57 Team Manager starting 
+18:44:58 Team Manager starting 
+18:44:58 Team Manager starting 
+18:44:58 Team Manager starting 
+18:45:59 Log file opened 
+18:45:59 Creating shared memory 
+18:45:59 Program starting 
+18:45:59 Simulation Manager starting 
+18:45:59 Malfunction Manager starting 
+18:45:59 Race Manager starting 
+18:45:59 Team Manager starting 
+18:45:59 Team Manager starting 
+18:46:00 Team Manager starting 
+18:46:00 Team Manager starting 
+18:46:00 Team Manager starting 
+19:02:10 Log file opened 
+19:02:10 Creating shared memory 
+19:02:10 Program starting 
+19:02:10 Simulation Manager starting 
+19:02:10 Malfunction Manager starting 
+19:02:10 Race Manager starting 
+19:02:10 Team Manager starting 
+19:02:10 Team Manager starting 
+19:02:10 Team Manager starting 
+19:02:10 Team Manager starting 
+19:02:10 Team Manager starting 
+19:02:27 Log file opened 
+19:02:27 Creating shared memory 
+19:02:27 Program starting 
+19:02:27 Simulation Manager starting 
+19:02:27 Malfunction Manager starting 
+19:02:27 Race Manager starting 
+19:02:27 Team Manager starting 
+19:02:27 Team Manager starting 
+19:02:27 Team Manager starting 
+19:02:27 Team Manager starting 
+19:02:28 Team Manager starting 
+19:02:36 Log file opened 
+19:02:36 Creating shared memory 
+19:02:36 Program starting 
+19:02:36 Simulation Manager starting 
+19:02:36 Malfunction Manager starting 
+19:02:36 Race Manager starting 
+19:02:36 Team Manager starting 
+19:02:37 Team Manager starting 
+19:02:37 Team Manager starting 
+19:02:37 Team Manager starting 
+19:02:37 Team Manager starting 
+19:04:50 Log file opened 
+19:04:50 Creating shared memory 
+19:04:50 Program starting 
+19:04:50 Simulation Manager starting 
+19:04:50 Malfunction Manager starting 
+19:04:50 Race Manager starting 
+19:04:50 Team Manager starting 
+19:04:51 Team Manager starting 
+19:04:51 Team Manager starting 
+19:04:51 Team Manager starting 
+19:04:51 Team Manager starting 
+19:05:57 Log file opened 
+19:05:57 Creating shared memory 
+19:05:57 Program starting 
+19:05:57 Simulation Manager starting 
+19:05:57 Malfunction Manager starting 
+19:05:57 Race Manager starting 
+19:05:57 Team Manager starting 
+19:05:57 Team Manager starting 
+19:05:57 Team Manager starting 
+19:05:57 Team Manager starting 
+19:05:57 Team Manager starting 
+19:08:44 Log file opened 
+19:08:44 Creating shared memory 
+19:08:44 Program starting 
+19:08:44 Simulation Manager starting 
+19:08:44 Malfunction Manager starting 
+19:08:44 Race Manager starting 
+19:08:44 Team Manager starting 
+19:08:44 Team Manager starting 
+19:08:45 Team Manager starting 
+19:08:45 Team Manager starting 
+19:08:45 Team Manager starting 
+19:38:19 Log file opened 
+19:38:19 Creating shared memory 
+19:38:19 Program starting 
+19:38:19 Simulation Manager starting 
+19:45:14 Log file opened 
+19:45:14 Creating shared memory 
+19:45:14 Program starting 
+19:45:14 Simulation Manager starting 
+19:45:22 Log file opened 
+19:45:22 Creating shared memory 
+19:45:22 Program starting 
+19:45:22 Simulation Manager starting 
+19:45:36 Log file opened 
+19:45:36 Creating shared memory 
+19:45:36 Program starting 
+19:45:36 Simulation Manager starting 
+19:47:26 Log file opened 
+19:47:26 Creating shared memory 
+19:47:26 Program starting 
+19:47:26 Simulation Manager starting 
+19:48:58 Log file opened 
+19:48:58 Creating shared memory 
+19:48:58 Program starting 
+19:48:58 Simulation Manager starting 
+19:48:58 Malfunction Manager starting 
+19:48:58 Race Manager starting 
+19:48:58 Team Manager starting 
+19:48:58 Team Manager starting 
+19:48:58 Team Manager starting 
+19:48:58 Team Manager starting 
+19:48:58 Team Manager starting 
+19:51:10 Log file opened 
+19:51:10 Creating shared memory 
+19:51:10 Program starting 
+19:51:10 Simulation Manager starting 
+19:51:10 Malfunction Manager starting 
+19:51:10 Race Manager starting 
+19:51:10 Team Manager starting 
+19:51:10 Team Manager starting 
+19:51:10 Team Manager starting 
+19:51:11 Team Manager starting 
+19:51:11 Team Manager starting 
+19:58:27 Log file opened 
+19:58:27 Creating shared memory 
+19:58:27 Program starting 
+19:58:27 Simulation Manager starting 
+19:58:27 Malfunction Manager starting 
+19:58:27 Race Manager starting 
+19:58:27 Team Manager starting 
+19:58:27 Team Manager starting 
+19:58:27 Team Manager starting 
+19:58:27 Team Manager starting 
+19:58:28 Team Manager starting 
+20:02:49 Log file opened 
+20:02:49 Creating shared memory 
+20:02:49 Program starting 
+20:02:49 Simulation Manager starting 
+20:10:32 Log file opened 
+20:10:32 Creating shared memory 
+20:10:32 Program starting 
+20:10:32 Simulation Manager starting 
+20:10:32 Malfunction Manager starting 
+20:10:32 Race Manager starting 
+20:10:32 Team Manager starting 
+20:10:32 Team Manager starting 
+20:10:33 Team Manager starting 
+20:10:33 Team Manager starting 
+20:10:33 Team Manager starting 
+20:43:50 Log file opened 
+20:43:50 Creating shared memory 
+20:43:50 Program starting 
+20:43:50 Simulation Manager starting 
+20:43:50 Malfunction Manager starting 
+20:43:50 Race Manager starting 
+20:44:28 Log file opened 
+20:44:28 Creating shared memory 
+20:44:28 Program starting 
+20:44:28 Simulation Manager starting 
+20:47:59 Log file opened 
+20:47:59 Creating shared memory 
+20:47:59 Program starting 
+20:47:59 Simulation Manager starting 
+21:07:53 Log file opened 
+21:07:53 Creating shared memory 
+21:07:53 Program starting 
+21:07:53 Simulation Manager starting 
+21:07:53 Malfunction Manager starting 
+21:07:53 Race Manager starting 
+21:07:53 Team Manager starting 
+21:07:53 Team Manager starting 
+21:07:53 Team Manager starting 
+21:07:53 Team Manager starting 
+21:07:53 Team Manager starting 
+21:09:26 Log file opened 
+21:09:26 Creating shared memory 
+21:09:26 Program starting 
+21:09:26 Simulation Manager starting 
+21:09:26 Malfunction Manager starting 
+21:09:26 Race Manager starting 
+21:09:26 Team Manager starting 
+21:09:27 Team Manager starting 
+21:09:27 Team Manager starting 
+21:09:27 Team Manager starting 
+21:09:27 Team Manager starting 
+21:09:52 Log file opened 
+21:09:52 Creating shared memory 
+21:09:52 Program starting 
+21:09:52 Simulation Manager starting 
+21:09:52 Malfunction Manager starting 
+21:09:52 Race Manager starting 
+21:09:52 Team Manager starting 
+21:09:52 Team Manager starting 
+21:09:52 Team Manager starting 
+21:09:53 Team Manager starting 
+21:09:53 Team Manager starting 
+21:10:25 Log file opened 
+21:10:25 Creating shared memory 
+21:10:25 Program starting 
+21:10:25 Simulation Manager starting 
+21:10:25 Malfunction Manager starting 
+21:10:25 Race Manager starting 
+21:10:25 Team Manager starting 
+21:10:25 Team Manager starting 
+21:10:26 Team Manager starting 
+21:10:26 Team Manager starting 
+21:10:26 Team Manager starting 
+21:11:08 Log file opened 
+21:11:08 Creating shared memory 
+21:11:08 Program starting 
+21:11:08 Simulation Manager starting 
+21:11:08 Malfunction Manager starting 
+21:11:08 Race Manager starting 
+21:11:08 Team Manager starting 
+21:11:09 Team Manager starting 
+21:11:09 Team Manager starting 
+21:11:09 Team Manager starting 
+21:11:09 Team Manager starting 
+21:13:07 Log file opened 
+21:13:07 Creating shared memory 
+21:13:07 Program starting 
+21:13:07 Simulation Manager starting 
+21:13:07 Malfunction Manager starting 
+21:13:07 Race Manager starting 
+21:13:07 Team Manager starting 
+21:13:07 Team Manager starting 
+21:13:07 Team Manager starting 
+21:13:07 Team Manager starting 
+21:13:07 Team Manager starting 
+21:15:01 Log file opened 
+21:15:01 Creating shared memory 
+21:15:01 Program starting 
+21:15:01 Simulation Manager starting 
+21:15:01 Malfunction Manager starting 
+21:15:01 Race Manager starting 
+21:15:01 Team Manager starting 
+21:15:01 Team Manager starting 
+21:15:01 Team Manager starting 
+21:15:01 Team Manager starting 
+21:15:01 Team Manager starting 
+21:16:31 Log file opened 
+21:16:31 Creating shared memory 
+21:16:31 Program starting 
+21:16:31 Simulation Manager starting 
+21:16:31 Malfunction Manager starting 
+21:16:31 Race Manager starting 
+21:16:31 Team Manager starting 
+21:16:31 Team Manager starting 
+21:16:31 Team Manager starting 
+21:16:31 Team Manager starting 
+21:16:31 Team Manager starting 
+21:17:35 Log file opened 
+21:17:35 Creating shared memory 
+21:17:35 Program starting 
+21:17:35 Simulation Manager starting 
+21:17:35 Malfunction Manager starting 
+21:17:35 Race Manager starting 
+21:17:35 Team Manager starting 
+21:17:35 Team Manager starting 
+21:17:35 Team Manager starting 
+21:17:35 Team Manager starting 
+21:17:35 Team Manager starting 
+21:18:14 Log file opened 
+21:18:14 Creating shared memory 
+21:18:14 Program starting 
+21:18:14 Simulation Manager starting 
+21:18:14 Malfunction Manager starting 
+21:18:14 Race Manager starting 
+21:18:14 Team Manager starting 
+21:18:14 Team Manager starting 
+21:18:14 Team Manager starting 
+21:18:14 Team Manager starting 
+21:18:14 Team Manager starting 
+21:21:54 Log file opened 
+21:21:54 Creating shared memory 
+21:21:54 Program starting 
+21:21:54 Simulation Manager starting 
+21:21:54 Malfunction Manager starting 
+21:21:54 Race Manager starting 
+21:21:54 Team Manager starting 
+21:22:45 Log file opened 
+21:22:45 Creating shared memory 
+21:22:45 Program starting 
+21:22:45 Simulation Manager starting 
+21:22:45 Malfunction Manager starting 
+21:22:45 Race Manager starting 
+21:22:45 Team Manager starting 
+21:22:45 Team Manager starting 
+21:22:45 Team Manager starting 
+21:22:45 Team Manager starting 
+21:22:45 Team Manager starting 
+21:23:33 Log file opened 
+21:23:33 Creating shared memory 
+21:23:33 Program starting 
+21:23:33 Simulation Manager starting 
+21:23:33 Malfunction Manager starting 
+21:23:33 Race Manager starting 
+21:23:33 Team Manager starting 
+21:23:33 Team Manager starting 
+21:23:33 Team Manager starting 
+21:23:33 Team Manager starting 
+21:23:33 Team Manager starting 
+21:33:46 Log file opened 
+21:33:46 Creating shared memory 
+21:33:46 Program starting 
+21:33:46 Simulation Manager starting 
+21:33:46 Malfunction Manager starting 
+21:33:46 Race Manager starting 
+21:33:46 Team Manager starting 
+21:33:46 Team Manager starting 
+21:33:46 Team Manager starting 
+21:33:46 Team Manager starting 
+21:33:46 Team Manager starting 
+21:34:21 Log file opened 
+21:34:21 Creating shared memory 
+21:34:21 Program starting 
+21:34:21 Simulation Manager starting 
+21:34:21 Malfunction Manager starting 
+21:34:21 Race Manager starting 
+21:34:21 Team Manager starting 
+21:34:21 Team Manager starting 
+21:34:21 Team Manager starting 
+21:34:21 Team Manager starting 
+21:34:21 Team Manager starting 
+21:43:57 Log file opened 
+21:43:57 Creating shared memory 
+21:43:57 Program starting 
+21:43:57 Simulation Manager starting 
+21:43:57 Malfunction Manager starting 
+21:43:57 Race Manager starting 
+21:43:57 Team Manager starting 
+21:43:57 Team Manager starting 
+21:43:57 Team Manager starting 
+21:43:57 Team Manager starting 
+21:43:57 Team Manager starting 
+21:50:15 Log file opened 
+21:50:15 Creating shared memory 
+21:50:15 Program starting 
+21:50:15 Simulation Manager starting 
+21:50:15 Malfunction Manager starting 
+21:50:15 Race Manager starting 
+21:50:15 Team Manager starting 
+21:50:15 Team Manager starting 
+21:50:15 Team Manager starting 
+21:50:15 Team Manager starting 
+21:50:15 Team Manager starting 
+21:51:31 Log file opened 
+21:51:31 Creating shared memory 
+21:51:31 Program starting 
+21:51:31 Simulation Manager starting 
+21:51:31 Malfunction Manager starting 
+21:51:31 Race Manager starting 
+21:51:31 Team Manager starting 
+21:51:31 Team Manager starting 
+21:51:31 Team Manager starting 
+21:51:31 Team Manager starting 
+21:51:31 Team Manager starting 
+21:52:10 Log file opened 
+21:52:10 Creating shared memory 
+21:52:10 Program starting 
+21:52:10 Simulation Manager starting 
+21:52:10 Malfunction Manager starting 
+21:52:10 Race Manager starting 
+21:52:10 Team Manager starting 
+21:52:10 Team Manager starting 
+21:52:10 Team Manager starting 
+21:52:10 Team Manager starting 
+21:52:10 Team Manager starting 
+21:53:12 Log file opened 
+21:53:12 Creating shared memory 
+21:53:12 Program starting 
+21:53:12 Simulation Manager starting 
+21:53:12 Malfunction Manager starting 
+21:53:12 Race Manager starting 
+21:53:12 Team Manager starting 
+21:53:12 Team Manager starting 
+21:53:12 Team Manager starting 
+21:53:12 Team Manager starting 
+21:53:12 Team Manager starting 
+21:54:04 Log file opened 
+21:54:04 Creating shared memory 
+21:54:04 Program starting 
+21:54:04 Simulation Manager starting 
+21:54:04 Malfunction Manager starting 
+21:54:04 Race Manager starting 
+21:54:04 Team Manager starting 
+21:54:04 Team Manager starting 
+21:54:04 Team Manager starting 
+21:54:04 Team Manager starting 
+21:54:04 Team Manager starting 
+21:55:28 Log file opened 
+21:55:28 Creating shared memory 
+21:55:28 Program starting 
+21:55:28 Simulation Manager starting 
+21:55:28 Malfunction Manager starting 
+21:55:28 Race Manager starting 
+21:55:28 Team Manager starting 
+21:55:28 Team Manager starting 
+21:55:28 Team Manager starting 
+21:55:28 Team Manager starting 
+21:55:28 Team Manager starting 
+21:56:22 Log file opened 
+21:56:22 Creating shared memory 
+21:56:22 Program starting 
+21:56:22 Simulation Manager starting 
+21:56:22 Malfunction Manager starting 
+21:56:22 Race Manager starting 
+21:56:22 Team Manager starting 
+21:56:22 Team Manager starting 
+21:56:22 Team Manager starting 
+21:56:22 Team Manager starting 
+21:56:22 Team Manager starting 
+21:56:44 Log file opened 
+21:56:44 Creating shared memory 
+21:56:44 Program starting 
+21:56:44 Simulation Manager starting 
+21:56:44 Malfunction Manager starting 
+21:56:44 Race Manager starting 
+21:56:44 Team Manager starting 
+21:56:44 Team Manager starting 
+21:56:44 Team Manager starting 
+21:56:44 Team Manager starting 
+21:56:44 Team Manager starting 
+21:57:09 Log file opened 
+21:57:09 Creating shared memory 
+21:57:09 Program starting 
+21:57:09 Simulation Manager starting 
+21:57:09 Malfunction Manager starting 
+21:57:09 Race Manager starting 
+21:57:09 Team Manager starting 
+21:57:09 Team Manager starting 
+21:57:09 Team Manager starting 
+21:57:09 Team Manager starting 
+21:57:09 Team Manager starting 
+21:57:25 Log file opened 
+21:57:25 Creating shared memory 
+21:57:25 Program starting 
+21:57:25 Simulation Manager starting 
+21:57:25 Malfunction Manager starting 
+21:57:25 Race Manager starting 
+21:57:25 Team Manager starting 
+21:57:25 Team Manager starting 
+21:57:25 Team Manager starting 
+21:57:25 Team Manager starting 
+21:57:25 Team Manager starting 
+21:57:41 Log file opened 
+21:57:41 Creating shared memory 
+21:57:41 Program starting 
+21:57:41 Simulation Manager starting 
+21:57:41 Malfunction Manager starting 
+21:57:41 Race Manager starting 
+21:57:41 Team Manager starting 
+21:57:41 Team Manager starting 
+21:57:41 Team Manager starting 
+21:57:41 Team Manager starting 
+21:57:41 Team Manager starting 
+21:58:55 Log file opened 
+21:58:55 Creating shared memory 
+21:58:55 Program starting 
+21:58:55 Simulation Manager starting 
+21:58:55 Malfunction Manager starting 
+21:58:55 Race Manager starting 
+21:58:55 Team Manager starting 
+21:58:55 Team Manager starting 
+21:58:55 Team Manager starting 
+21:58:55 Team Manager starting 
+21:58:55 Team Manager starting 
+22:05:01 Log file opened 
+22:05:01 Creating shared memory 
+22:05:01 Program starting 
+22:05:01 Simulation Manager starting 
+22:05:01 Malfunction Manager starting 
+22:05:01 Race Manager starting 
+22:05:01 Team Manager starting 
+22:05:01 Team Manager starting 
+22:05:01 Team Manager starting 
+22:05:01 Team Manager starting 
+22:05:01 Team Manager starting 
+22:09:18 Log file opened 
+22:09:18 Creating shared memory 
+22:09:18 Program starting 
+22:09:18 Simulation Manager starting 
+22:09:18 Malfunction Manager starting 
+22:09:18 Race Manager starting 
+22:09:18 Team Manager starting 
+22:09:18 Team Manager starting 
+22:09:18 Team Manager starting 
+22:09:18 Team Manager starting 
+22:09:18 Team Manager starting 
+22:10:58 Log file opened 
+22:10:58 Creating shared memory 
+22:10:58 Program starting 
+22:10:58 Simulation Manager starting 
+22:10:58 Malfunction Manager starting 
+22:10:58 Race Manager starting 
+22:10:58 Team Manager starting 
+22:10:58 Team Manager starting 
+22:10:58 Team Manager starting 
+22:10:58 Team Manager starting 
+22:10:58 Team Manager starting 
+22:11:04 Log file opened 
+22:11:04 Creating shared memory 
+22:11:04 Program starting 
+22:11:04 Simulation Manager starting 
+22:11:04 Malfunction Manager starting 
+22:11:04 Race Manager starting 
+22:11:04 Team Manager starting 
+22:11:04 Team Manager starting 
+22:11:04 Team Manager starting 
+22:11:04 Team Manager starting 
+22:11:04 Team Manager starting 
+22:14:11 Log file opened 
+22:14:11 Creating shared memory 
+22:14:11 Program starting 
+22:14:11 Simulation Manager starting 
+22:14:11 Malfunction Manager starting 
+22:14:11 Race Manager starting 
+22:14:11 Team Manager starting 
+22:14:11 Team Manager starting 
+22:14:11 Team Manager starting 
+22:14:11 Team Manager starting 
+22:14:11 Team Manager starting 
+22:14:33 Log file opened 
+22:14:33 Creating shared memory 
+22:14:33 Program starting 
+22:14:33 Simulation Manager starting 
+22:14:33 Malfunction Manager starting 
+22:14:33 Race Manager starting 
+22:14:33 Team Manager starting 
+22:14:33 Team Manager starting 
+22:14:33 Team Manager starting 
+22:14:33 Team Manager starting 
+22:14:33 Team Manager starting 
+22:17:39 Log file opened 
+22:17:39 Creating shared memory 
+22:17:39 Program starting 
+22:17:39 Simulation Manager starting 
+22:17:39 Malfunction Manager starting 
+22:17:39 Race Manager starting 
+22:17:39 Team Manager starting 
+22:17:39 Team Manager starting 
+22:17:39 Team Manager starting 
+22:17:39 Team Manager starting 
+22:17:39 Team Manager starting 
+22:18:19 Log file opened 
+22:18:19 Creating shared memory 
+22:18:19 Program starting 
+22:18:19 Simulation Manager starting 
+22:18:19 Malfunction Manager starting 
+22:18:19 Race Manager starting 
+22:18:19 Team Manager starting 
+22:18:19 Team Manager starting 
+22:18:19 Team Manager starting 
+22:18:19 Team Manager starting 
+22:18:19 Team Manager starting 
+22:22:32 Log file opened 
+22:22:32 Creating shared memory 
+22:22:32 Program starting 
+22:22:32 Simulation Manager starting 
+22:22:32 Malfunction Manager starting 
+22:22:32 Race Manager starting 
+22:22:32 Team Manager starting 
+22:22:32 Team Manager starting 
+22:22:32 Team Manager starting 
+22:22:32 Team Manager starting 
+22:22:32 Team Manager starting 
+22:23:24 Log file opened 
+22:23:24 Creating shared memory 
+22:23:24 Program starting 
+22:23:24 Simulation Manager starting 
+22:23:24 Malfunction Manager starting 
+22:23:24 Race Manager starting 
+22:23:24 Team Manager starting 
+22:23:24 Team Manager starting 
+22:23:24 Team Manager starting 
+22:23:24 Team Manager starting 
+22:23:24 Team Manager starting 
+22:24:13 Log file opened 
+22:24:13 Creating shared memory 
+22:24:13 Program starting 
+22:24:13 Simulation Manager starting 
+22:24:13 Malfunction Manager starting 
+22:24:13 Race Manager starting 
+22:24:13 Team Manager starting 
+22:24:13 Team Manager starting 
+22:24:13 Team Manager starting 
+22:24:13 Team Manager starting 
+22:24:13 Team Manager starting 
+22:26:10 Log file opened 
+22:26:10 Creating shared memory 
+22:26:10 Program starting 
+22:26:10 Simulation Manager starting 
+22:26:10 Malfunction Manager starting 
+22:26:10 Race Manager starting 
+22:26:10 Team Manager starting 
+22:26:10 Team Manager starting 
+22:26:10 Team Manager starting 
+22:26:10 Team Manager starting 
+22:26:10 Team Manager starting 
+22:31:35 Log file opened 
+22:31:35 Creating shared memory 
+22:31:35 Program starting 
+22:31:35 Simulation Manager starting 
+22:31:35 Malfunction Manager starting 
+22:31:35 Race Manager starting 
+22:31:35 Team Manager starting 
+22:31:35 Team Manager starting 
+22:31:35 Team Manager starting 
+22:31:35 Team Manager starting 
+22:31:35 Team Manager starting 
+22:37:09 Log file opened 
+22:37:09 Creating shared memory 
+22:37:09 Program starting 
+22:37:09 Simulation Manager starting 
+22:37:09 Malfunction Manager starting 
+22:37:09 Race Manager starting 
+22:37:09 Team Manager starting 
+22:37:09 Team Manager starting 
+22:37:09 Team Manager starting 
+22:37:09 Team Manager starting 
+22:37:09 Team Manager starting 
+22:37:48 Log file opened 
+22:37:48 Creating shared memory 
+22:37:48 Program starting 
+22:37:48 Simulation Manager starting 
+22:37:48 Malfunction Manager starting 
+22:37:48 Race Manager starting 
+22:37:48 Team Manager starting 
+22:37:48 Team Manager starting 
+22:37:48 Team Manager starting 
+22:37:48 Team Manager starting 
+22:37:48 Team Manager starting 
+22:49:07 Log file opened 
+22:49:07 Creating shared memory 
+22:49:07 Program starting 
+22:49:07 Simulation Manager starting 
+22:49:07 Malfunction Manager starting 
+22:49:07 Race Manager starting 
+22:49:07 Team Manager starting 
+22:49:07 Team Manager starting 
+22:49:07 Team Manager starting 
+22:49:07 Team Manager starting 
+22:49:07 Team Manager starting 
+22:49:41 Log file opened 
+22:49:41 Creating shared memory 
+22:49:41 Program starting 
+22:49:41 Simulation Manager starting 
+22:49:41 Malfunction Manager starting 
+22:49:41 Race Manager starting 
+22:49:41 Team Manager starting 
+22:49:41 Team Manager starting 
+22:49:41 Team Manager starting 
+22:49:41 Team Manager starting 
+22:49:41 Team Manager starting 
+22:50:23 Log file opened 
+22:50:23 Creating shared memory 
+22:50:23 Program starting 
+22:50:23 Simulation Manager starting 
+22:50:23 Malfunction Manager starting 
+22:50:23 Race Manager starting 
+22:50:23 Team Manager starting 
+22:50:23 Team Manager starting 
+22:50:23 Team Manager starting 
+22:50:23 Team Manager starting 
+22:50:23 Team Manager starting 
+22:51:18 Log file opened 
+22:51:18 Creating shared memory 
+22:51:18 Program starting 
+22:51:18 Simulation Manager starting 
+22:51:33 Log file opened 
+22:51:33 Creating shared memory 
+22:51:33 Program starting 
+22:51:33 Simulation Manager starting 
+22:51:33 Malfunction Manager starting 
+22:51:33 Race Manager starting 
+22:51:33 Team Manager starting 
+22:51:33 Team Manager starting 
+22:51:33 Team Manager starting 
+22:51:33 Team Manager starting 
+22:51:33 Team Manager starting 
+22:52:13 Log file opened 
+22:52:13 Creating shared memory 
+22:52:13 Program starting 
+22:52:13 Simulation Manager starting 
+22:52:13 Malfunction Manager starting 
+22:52:13 Race Manager starting 
+22:52:13 Team Manager starting 
+22:52:13 Team Manager starting 
+22:52:13 Team Manager starting 
+22:52:13 Team Manager starting 
+22:52:13 Team Manager starting 

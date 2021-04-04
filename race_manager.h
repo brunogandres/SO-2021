@@ -8,4 +8,5 @@
  *
  */
 
-void race_manag();
+void race_manag(config_struct *_config, shm_struct *_shm);
+void race_manag_init();

@@ -41,6 +41,18 @@
 
 #define CONFIG_FILE "config.txt"
 
+
+
+
+
+
+
+
+
+Node linked_list_create();
+Node linked_list_insert(Node header, void* cargo);
+void linked_list_remove(Node header, Node node);
+
 void write_log(char *text);
 void init();
 void terminate();

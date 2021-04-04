@@ -9,18 +9,35 @@
  */
 #include "main.h"
 
-config_struct config;
+config_struct *config;
+shm_struct *shm;
 
-void race_manag(){
+Node header;
+
+void race_manag_init(){
+
+    header = linked_list_create();
+
+    
+
+    //shm->arrayEquipas = (team *)header;
+}
+
+
+void race_manag(config_struct *_config, shm_struct *_shm){
+    config = _config;
+    shm = _shm;
     write_log("Race Manager starting");
     printf("Race Manager starting on PID: %d AND FATHER IS %d\n", getpid(), getppid());
 
-    for(int i= 0; i < config.number_of_teams; i++){
+    race_manag_init();
+    for(int i= 0; i < config->number_of_teams; i++){
         if(fork()){
             wait(NULL);
         }
         else{
-            team_man();
+            team_man(i, config, shm, header);
+            
             exit(0);
         }
     }

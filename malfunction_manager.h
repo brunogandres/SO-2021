@@ -9,4 +9,4 @@
  */
 
 
-void malfunc_manager();
+void malfunc_manager(config_struct *_config);
