@@ -14,13 +14,15 @@ shm_struct *shm;
 
 Node header;
 
+pthread_mutexattr_t attrmutex;
+
+
 void race_manag_init(){
 
     header = linked_list_create();
 
     
 
-    //shm->arrayEquipas = (team *)header;
 }
 
 
@@ -41,4 +43,6 @@ void race_manag(config_struct *_config, shm_struct *_shm){
             exit(0);
         }
     }
+
+    //for(int i=0;i<config->number_of_teams;i++) wait(NULL);
 }

@@ -52,7 +52,11 @@ void race_sim_init(){
 
 }
 
-void race_sim_terminate(){}
+void race_sim_terminate(){
+
+
+    
+}
 
 //"main"
 void race_sim(config_struct *_config, shm_struct *_shm){

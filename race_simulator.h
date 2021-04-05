@@ -55,21 +55,6 @@ typedef struct
 
 // Cars structs
 
-/*
-typedef struct tnode *team;
-typedef struct tnode {
-
-    int slot_id;        //slot shm
-
-    int estadoBox; //1-ocupado 0-livre
-    car* arrayCarros;
-
-    int id;
-
-    //team next,previous;
-} Team_node;
-*/
-
 typedef struct
 {
     int slot_id;        //slot shm
@@ -84,6 +69,9 @@ typedef struct
 typedef struct 
 {
     stats_struct stats; //--> mais para a frente
+
+
+    pthread_mutex_t mutex;
 
     //array equipas
     team *arrayEquipas;

@@ -14,6 +14,9 @@ shm_struct *shm;// Shared memory
 config_struct *config;// Config struct
 Node header;
 Node headerCars;
+pthread_mutexattr_t attrmutex;
+
+
 
 
 
@@ -31,6 +34,7 @@ int idTeam;
 void create_cars(){
     int r[carsTotal];
     int t;
+    pthread_mutex_lock(&shm->mutex);
     shm->arrayEquipas[idTeam].ids = r;
     for(int i = 0; i < carsTotal; i++){
         r[i] = i;
@@ -40,6 +44,8 @@ void create_cars(){
         if(t == 0)
             printf("[%s] Thread Carro crida com o id %d\n", shm->arrayEquipas[idTeam].nome,shm->arrayEquipas[idTeam].arrayCarros[i].id);
     }
+
+    pthread_mutex_unlock(&shm->mutex);
     
     
 
@@ -51,6 +57,12 @@ void *thread_sim_car(void *carro){
 }
 
 void team_man_init(){
+
+    
+    pthread_mutexattr_init(&attrmutex);
+    pthread_mutexattr_setpshared(&attrmutex, PTHREAD_PROCESS_SHARED);
+
+    pthread_mutex_init(&shm->mutex, &attrmutex);
     
     team *equipa;
     car carros[config->cars_per_team];
@@ -83,19 +95,12 @@ void team_man_init(){
 
     //shm->arrayEquipas[idTeam].arrayCarros = carros;
     
+    pthread_mutex_lock(&shm->mutex);
     shm->arrayEquipas[idTeam] = *equipa;
-
+    pthread_mutex_unlock(&shm->mutex);
     
     linked_list_insert(header, equipa);
     
-    
-    
-    
-
-
-
-
-
     create_cars();
 
 
@@ -103,6 +108,19 @@ void team_man_init(){
 }
 
 void team_man_terminate(){
+    
+    
+    pthread_t temp;
+    for (int i = 0; i < carsTotal; i++) {
+	    pthread_mutex_lock(&shm->mutex);
+	    temp = shm->arrayEquipas[idTeam].arrayCarros[i].thread;
+        pthread_mutex_unlock(&shm->mutex);
+        pthread_join(temp, NULL);
+    }
+    
+	pthread_mutexattr_destroy(&attrmutex);
+
+    free(header);
 
 }
 

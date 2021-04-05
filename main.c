@@ -116,7 +116,10 @@ void init(){
         write_log("Error on shared memory creation\n");
         exit(1);
     }
-    shm = shmat(shmid, NULL, 0);
+    if ((shm = (shm_struct *) shmat(shmid, NULL, 0)) == (shm_struct*)-1) {
+		perror("Shmat error!");
+		exit(1);
+	}
 
     
     if((teams_shmid = shmget(IPC_PRIVATE, sizeof(team), IPC_CREAT|0700)) == -1){
@@ -134,6 +137,18 @@ void terminate(){
 
 
     write_log("Terminating program");
+    race_sim_terminate();
+
+    shmdt(shm->arrayEquipas);
+    shmctl(teams_shmid, IPC_RMID, NULL);
+
+    shmdt(shm);
+    shmctl(shmid, IPC_RMID, NULL); // Destroy main shared memory
+
+    write_log("Shared memory destroyed");
+    write_log("Terminating program");
+    
+    free(config);
     fclose(log_file);
     exit(0);
 } 
