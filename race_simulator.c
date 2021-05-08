@@ -1,21 +1,14 @@
-/*
- *  Licenciatura em Engenharia Informática
- *
- *  Sistemas Operativos
- *  Projeto - Simulador	de	corridas
- *
- *  2018295305 - Bruno Damião Areias Gandres
- *
- */
-
-#include "main.h"
+#include "race_simulator.h"
 
 
+FILE* log_file;         //LOG FILE
+int shmid, teams_shmid;              //Shared Memory
 
-config_struct *config;
-shm_struct *shm;
 
-//Ler ficheiro config
+config_struct* config;   //config struct
+shm_struct* shm;
+int pid[2]; // saves the pid of child processes
+
 void read_config(){
     
     FILE *config_file = fopen(CONFIG_FILE, "r");
@@ -43,48 +36,170 @@ void read_config(){
 
 
 
-void race_sim_init(){
+
+void write_log(char *text){
+
+
+    char buff[9];
+    struct tm* time_info;
+    time_t timer;
+
+    time(&timer);
+    time_info = localtime(&timer);
+    strftime(buff, 26, "%H:%M:%S", time_info);
+
+    fprintf(log_file, "%s ", buff);
+    fprintf(log_file, "%s ", text);
+    fprintf(log_file, "\n");
+
+    fflush(log_file);
+}
+
+
+void init(){
+
+    
+    // Open log file
+    log_file = fopen(LOG_FILE, "a");
+    if(log_file == NULL)
+        printf("Error opening log file\n");
+    write_log("Log file opened");
+
+    //Read config file
+
+    config = malloc(sizeof(config_struct));
+    if(config == NULL){
+        printf("Error on malloc\n");
+        exit(-1);
+    }
+
+    read_config();
+    
+
+
+    // Create pipe
+    write_log("Creating pipe");
+    unlink(PIPE);
+    if(mkfifo(PIPE, O_CREAT|O_EXCL|0600) < 0) {
+        write_log("Error on FIFO creation");
+        exit(1);
+    }
+
+
+    // Shared memory creation and mapping
+    write_log("Creating shared memory");
+    printf("Creating shared memory\n");
+
+    if((shmid = shmget(IPC_PRIVATE, sizeof(shm_struct), IPC_CREAT|0700)) == -1) {
+        write_log("Error on shared memory creation\n");
+        exit(1);
+    }
+    if ((shm = (shm_struct *) shmat(shmid, NULL, 0)) == (shm_struct*)-1) {
+		perror("Shmat error!");
+		exit(1);
+	}
+
+    shm->arrayEquipas = malloc(config->number_of_teams * sizeof(team));
+
+
+    
+    
+    // Create message queue    
+}
+void terminate(){
+    write_log("Terminating program");
+    printf("TERMINATE\n");
+    signal(SIGINT, SIG_IGN);
+    
+    /*
+    pthread_t temp;
+    //team_man_terminate();
 
     for(int i = 0; i < config->number_of_teams; i++){
-        shm->arrayEquipas[i].slot_id = i;
-
+        for(int j = 0; j < config->cars_per_team; j++){
+            pthread_mutex_lock(&shm->mutex);
+            temp = shm->arrayEquipas[i].arrayCarros[j].thread;
+            pthread_mutex_unlock(&shm->mutex);
+            pthread_join(temp, NULL);
+            printf("EQUIPA %d | Thread a terminar carro %d\n", i, j);
+        }
     }
+    */
+    
+    //race_sim_terminate();
+    race_manager_term();
+    wait(NULL);
 
-}
+    shmdt(shm->arrayEquipas);
+    shmctl(teams_shmid, IPC_RMID, NULL);
 
-void race_sim_terminate(){
+    shmdt(shm);
+    shmctl(shmid, IPC_RMID, NULL); // Destroy main shared memory
 
 
+
+    write_log("Shared memory destroyed");
+    write_log("Terminating program");
+    //close(PIPE);
+    free(config);
+    fclose(log_file);
+    exit(0);
+} 
+void estatisticas(){
     
 }
+int main(){    
 
-//"main"
-void race_sim(config_struct *_config, shm_struct *_shm){
-    config = _config;
-    shm = _shm;
-
-    write_log("Simulation Manager starting");
-    printf("Simulation Manager starting on PID: %d\n", getpid());
-
+    signal(SIGINT, terminate);
+    signal(SIGTSTP, estatisticas);
     
-
-    race_sim_init();
-
+    init();
     
     
+    /*
     if(fork() == 0){
-        
         race_manag(config,shm);
-        //wait(NULL);
-    }
-    else{
+    }else{
         if(fork() == 0){
             malfunc_manager(config);
         }
         else{
-            wait(NULL);
+            printf("Race Simulator starting [%d]\n", getpid());
+            for(int i = 0; i < 2; i++) wait(NULL);
+            printf("##Race simulator a terminar\n");
+            terminate();
+          
         }
     }
+    */
+    
+    if((pid[0]=fork())==0){
+        signal(SIGINT, terminate);
+	    race_manag(config,shm);
+	    exit(0);
+	}
+    if((pid[1]=fork())==0){
+        //signal(SIGINT, terminate);
+	    malfunc_manager(config);
+	    exit(0);
+	}
     
 
+    printf("Race Simulator starting [%d]\n", getpid());
+    for(int i = 0; i < 2; i++) wait(NULL);
+    printf("##Race Simulator TERMINADO\n");
+    terminate();
+
+    exit(0);    
+
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
 }

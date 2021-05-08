@@ -10,7 +10,7 @@
 
 
 
-void team_man(int id, config_struct *_config, shm_struct *_shm,Node header);
+void team_man(int id, config_struct *_config, shm_struct *_shm);
 
 
 
@@ -20,8 +20,8 @@ void team_man(int id, config_struct *_config, shm_struct *_shm,Node header);
 
 
 
-
-void create_Cars();
 void *thread_sim_car(void *carro);
+void create_Cars();
+
 void team_man_init();
 void team_man_terminate();

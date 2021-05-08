@@ -1,14 +1,44 @@
-/*
- *  Licenciatura em Engenharia Informática
- *
- *  Sistemas Operativos
- *  Projeto - Simulador	de	corridas
- *
- *  2018295305 - Bruno Damião Areias Gandres
- *
- */
+#ifndef RACE_SIMULATOR_H
+#define RACE_SIMULATOR_H
+
+#include <stdarg.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
+#include <sys/fcntl.h>
+#include <sys/ipc.h>
+#include <sys/msg.h>
+#include <sys/shm.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+
+#include <ctype.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <pthread.h>
+#include <regex.h>
+#include <semaphore.h>
+#include <signal.h>
+#include <string.h>
+#include <time.h>
+#define PATTERN_ADD "[:number:][:space:]$"
 
 
+
+#define LOG_FILE "log.txt"
+
+#define CONFIG_FILE "config.txt"
+
+#define PIPE "input_pipe"
+
+#define BUF_SIZE 1024
+
+
+#define START_RACE 2
+#define ADDCAR 1
+#define ERRO 0
 
 
 #define MAX_LEN_NAME 100
@@ -87,17 +117,14 @@ typedef struct Node{
     Node previous, next;
 } tnode;
 
+#include "race_manager.h"
+#include "teamManager.h"
+#include "malfunction_manager.h"
 
-
-
-
-
-
-
-
-
-
+void write_log(char *text);
+void init();
+void terminate();
 void read_config();
-void race_sim_init();
-void race_sim_terminate();
-void race_sim(config_struct *_config, shm_struct *_shm);
+void estatisticas();
+
+#endif
