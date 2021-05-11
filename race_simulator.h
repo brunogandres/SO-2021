@@ -39,6 +39,7 @@
 #define START_RACE 2
 #define ADDCAR 1
 #define ERRO 0
+#define EXIT 3
 
 
 #define MAX_LEN_NAME 100
@@ -89,6 +90,7 @@ typedef struct
 {
     int slot_id;        //slot shm
     int estadoBox; //1-ocupado 0-livre
+    int numeroCarros;
     car* arrayCarros;
     int *ids;
     int id;

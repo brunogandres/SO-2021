@@ -2,11 +2,13 @@
 
 
 FILE* log_file;         //LOG FILE
-int shmid, teams_shmid;              //Shared Memory
+int shmid;              //Shared Memory
 
 
 config_struct* config;   //config struct
 shm_struct* shm;
+team* arrayEquipas;
+
 int pid[2]; // saves the pid of child processes
 
 void read_config(){
@@ -99,8 +101,9 @@ void init(){
 		exit(1);
 	}
 
-    shm->arrayEquipas = malloc(config->number_of_teams * sizeof(team));
-
+    arrayEquipas = (team *)shmat(shmid, NULL, 0);
+    
+    //arrayEquipas = (team*)&shm->arrayEquipas;
 
     
     
@@ -110,6 +113,9 @@ void terminate(){
     write_log("Terminating program");
     printf("TERMINATE\n");
     signal(SIGINT, SIG_IGN);
+    
+    
+    
     
     /*
     pthread_t temp;
@@ -126,13 +132,10 @@ void terminate(){
     }
     */
     
-    //race_sim_terminate();
     race_manager_term();
-    wait(NULL);
+    //wait(NULL);
 
-    shmdt(shm->arrayEquipas);
-    shmctl(teams_shmid, IPC_RMID, NULL);
-
+    pthread_mutex_destroy(&shm->mutex);
     shmdt(shm);
     shmctl(shmid, IPC_RMID, NULL); // Destroy main shared memory
 
@@ -143,6 +146,7 @@ void terminate(){
     //close(PIPE);
     free(config);
     fclose(log_file);
+    printf("Terminating program\n");
     exit(0);
 } 
 void estatisticas(){
@@ -175,11 +179,11 @@ int main(){
     
     if((pid[0]=fork())==0){
         signal(SIGINT, terminate);
-	    race_manag(config,shm);
+	    race_manag(config,shm,arrayEquipas);
 	    exit(0);
 	}
     if((pid[1]=fork())==0){
-        //signal(SIGINT, terminate);
+        signal(SIGINT, terminate);
 	    malfunc_manager(config);
 	    exit(0);
 	}
@@ -188,7 +192,7 @@ int main(){
     printf("Race Simulator starting [%d]\n", getpid());
     for(int i = 0; i < 2; i++) wait(NULL);
     printf("##Race Simulator TERMINADO\n");
-    terminate();
+    //terminate();
 
     exit(0);    
 

@@ -12,6 +12,8 @@
 
 shm_struct *shm;// Shared memory
 config_struct *config;// Config struct
+team *arrayEquipas;
+
 Node header;
 Node headerCars;
 pthread_mutexattr_t attrmutex;
@@ -39,15 +41,15 @@ void create_cars(){
 
     pthread_t temp;
     pthread_mutex_lock(&shm->mutex);
-    shm->arrayEquipas[idTeam].ids = r;
+    arrayEquipas[idTeam].ids = r;
     
     
     for(int i = 0; i < carsTotal; i++){
         r[i] = i;
-        //printf("ID CARRO: %d\n", shm->arrayEquipas[idTeam].arrayCarros[i].id);
-        t = pthread_create(&shm->arrayEquipas[idTeam].arrayCarros[i].thread, NULL, thread_sim_car, &r[i]);
+        printf("%d\n", i);
+        t = pthread_create(&arrayEquipas[idTeam].arrayCarros[i].thread, NULL, thread_sim_car, &r[i]);
         if(t == 0)
-            printf("[%s] Thread Carro crida com o id %d\n", shm->arrayEquipas[idTeam].nome,shm->arrayEquipas[idTeam].arrayCarros[i].id);
+            printf("[%s] Thread Carro crida com o id %d\n",arrayEquipas[idTeam].nome,arrayEquipas[idTeam].arrayCarros[i].id);
 
     }
     pthread_mutex_unlock(&shm->mutex);
@@ -55,20 +57,12 @@ void create_cars(){
     
     for(int j = 0; j < config->cars_per_team; j++){
         pthread_mutex_lock(&shm->mutex);
-        temp = shm->arrayEquipas[idTeam].arrayCarros[j].thread;
+        temp = arrayEquipas[idTeam].arrayCarros[j].thread;
         pthread_mutex_unlock(&shm->mutex);
         pthread_join(temp, NULL);
         //printf("EQUIPA %d | Thread a terminar carro %d\n", idTeam, j);
     }
     
-
-
-
-
-    
-    
-    
-
 }
 
 
@@ -114,7 +108,7 @@ void team_man_init(){
     equipa->arrayCarros = carros;
     
     pthread_mutex_lock(&shm->mutex);
-    shm->arrayEquipas[idTeam] = *equipa;
+    arrayEquipas[idTeam] = *equipa;
 
     pthread_mutex_unlock(&shm->mutex);
     
@@ -130,8 +124,9 @@ void team_man_init(){
 
 
 //main
-void team_man(int id, config_struct *_config, shm_struct *_shm){
-
+void team_man(int id, config_struct *_config, shm_struct *_shm, team *array){
+    shm = _shm;
+    arrayEquipas = array;
     write_log("Team Manager starting");
     printf("Team Manager starting on PID: %d\n", getpid());
     config = _config;

@@ -8,8 +8,9 @@
  *
  */
 
-void race_manag(config_struct *_config, shm_struct *_shm);
+void race_manag(config_struct *_config, shm_struct *_shm, team *array);
 void race_manag_init();
 void *thread_receives_new_commands(void *arg);
 void race_manager_term();
 int verificaSyntax(char *input);
+int parse(char *input, int type);
