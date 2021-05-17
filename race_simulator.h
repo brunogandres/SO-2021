@@ -25,7 +25,8 @@
 #include <time.h>
 #define PATTERN_ADD "[:number:][:space:]$"
 
-
+#define OCUPADO 0
+#define LIVRE 1
 
 #define LOG_FILE "log.txt"
 
@@ -66,12 +67,15 @@ typedef struct{
     pthread_t thread;
 
     int slot_id, id;
-
+    int idTeam;
+    int visitado;
     char name[MAX_LEN_NAME];
+    char team[10];
     int estado; //1-Corrida 2-Segurança 3-Box 4-Desistencia 5-Terminado
-    
+    int reliability;
     int speed;
     int consumption;
+    int estadoSlot;
 } car;
 
 typedef struct
@@ -80,7 +84,7 @@ typedef struct
     int totalAvarias;
     int totalAbastecimentos;
     int carrosEmPista;
-    car* lastPosition;
+    int estado;
 
 }stats_struct;
 
@@ -90,6 +94,7 @@ typedef struct
 {
     int slot_id;        //slot shm
     int estadoBox; //1-ocupado 0-livre
+    int estadoSlot;
     int numeroCarros;
     car* arrayCarros;
     int *ids;
@@ -103,13 +108,13 @@ typedef struct
     stats_struct stats; //--> mais para a frente
 
 
-    pthread_mutex_t mutex;
+    pthread_mutex_t mutex, arrayEquipas_mutex, arrayCarros_mutex;
 
-    //array equipas
-    team *arrayEquipas;
+    pthread_cond_t threadCarroCriada, criaThreadCarro;
+    int current_time;
+    int totalEquipasSHM;
+    int totalCarrosSHM;
 
-    //array de carros em pista
-    car* cars;
 
 }shm_struct;
 

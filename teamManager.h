@@ -10,7 +10,7 @@
 
 
 
-void team_man(int id, config_struct *_config, shm_struct *_shm, team *array);
+void team_man(int id, config_struct *_config, shm_struct *_shm);
 
 
 
