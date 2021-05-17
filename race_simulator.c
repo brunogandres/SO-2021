@@ -7,7 +7,10 @@ int shmid;              //Shared Memory
 
 config_struct* config;   //config struct
 shm_struct* shm;
-team* arrayEquipas;
+team *arrayEquipas;
+car *arrayCarros;
+pthread_mutexattr_t attrmutex;
+pthread_condattr_t attrcondv;
 
 int pid[2]; // saves the pid of child processes
 
@@ -92,7 +95,9 @@ void init(){
     write_log("Creating shared memory");
     printf("Creating shared memory\n");
 
-    if((shmid = shmget(IPC_PRIVATE, sizeof(shm_struct), IPC_CREAT|0700)) == -1) {
+    if((shmid = shmget(IPC_PRIVATE, sizeof(shm_struct) + sizeof(team) * config->number_of_teams 
+        + sizeof(car) * (config->number_of_teams * config->cars_per_team), IPC_CREAT|0700)) == -1) {
+
         write_log("Error on shared memory creation\n");
         exit(1);
     }
@@ -101,12 +106,34 @@ void init(){
 		exit(1);
 	}
 
-    arrayEquipas = (team *)shmat(shmid, NULL, 0);
-    
-    //arrayEquipas = (team*)&shm->arrayEquipas;
+
+    arrayEquipas = (team *)(shm + 1);
 
     
+
+
+    // Mutexes' attributes
+    pthread_mutexattr_init(&attrmutex);
+    pthread_mutexattr_setpshared(&attrmutex, PTHREAD_PROCESS_SHARED);
+
+    /* Initialize attribute of condition variable. */
+    pthread_condattr_init(&attrcondv);
+    pthread_condattr_setpshared(&attrcondv, PTHREAD_PROCESS_SHARED);
+
     
+    // Mutexes' initialization
+    pthread_mutex_init(&shm->mutex, &attrmutex);
+    pthread_mutex_init(&shm->arrayEquipas_mutex, &attrmutex);
+    pthread_mutex_init(&shm->arrayCarros_mutex, &attrmutex);
+
+    /* Initialize condition variables. */
+    pthread_cond_init(&shm->criaThreadCarro, &attrcondv);
+    pthread_cond_init(&shm->threadCarroCriada, &attrcondv);
+    
+    
+
+    shm->current_time = 0;
+    shm->totalEquipasSHM = 0;
     // Create message queue    
 }
 void terminate(){
@@ -136,6 +163,14 @@ void terminate(){
     //wait(NULL);
 
     pthread_mutex_destroy(&shm->mutex);
+    //pthread_mutex_destroy(&shm->arrayCarros_mutex);
+    //pthread_mutex_destroy(&shm->arrayEquipas_mutex);
+    pthread_mutexattr_destroy(&attrmutex); 
+
+    //pthread_cond_destroy(&shm->threadCarroCriada);
+    //pthread_cond_destroy(&shm->criaThreadCarro);
+    pthread_condattr_destroy(&attrcondv);
+
     shmdt(shm);
     shmctl(shmid, IPC_RMID, NULL); // Destroy main shared memory
 
@@ -158,32 +193,13 @@ int main(){
     signal(SIGTSTP, estatisticas);
     
     init();
-    
-    
-    /*
-    if(fork() == 0){
-        race_manag(config,shm);
-    }else{
-        if(fork() == 0){
-            malfunc_manager(config);
-        }
-        else{
-            printf("Race Simulator starting [%d]\n", getpid());
-            for(int i = 0; i < 2; i++) wait(NULL);
-            printf("##Race simulator a terminar\n");
-            terminate();
-          
-        }
-    }
-    */
+
     
     if((pid[0]=fork())==0){
-        signal(SIGINT, terminate);
-	    race_manag(config,shm,arrayEquipas);
+	    race_manag(config,shm);
 	    exit(0);
 	}
     if((pid[1]=fork())==0){
-        signal(SIGINT, terminate);
 	    malfunc_manager(config);
 	    exit(0);
 	}
