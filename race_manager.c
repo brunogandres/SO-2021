@@ -12,6 +12,7 @@
 config_struct *config; //config
 shm_struct *shm; //shared memory
 team *arrayEquipas;
+car *arrayCarros;
 
 pthread_mutexattr_t attrmutex;
 
@@ -21,15 +22,25 @@ int fd;
 //Inicializar
 void race_manag_init(){
     
-    
+    pthread_mutex_lock(&shm->arrayEquipas_mutex);
     for(int i = 0; i < config->number_of_teams; i++){
         
         arrayEquipas[i].slot_id = i;
+        arrayEquipas[i].estadoSlot = LIVRE;
+        arrayEquipas[i].numeroCarros = 0;
+        arrayEquipas[i].estadoBox = LIVRE;
 
     }
     
+    for(int i = 0; i < config->number_of_teams * config->cars_per_team; i++){
+        
+        arrayCarros[i].estadoSlot = LIVRE;
 
+
+    }
+    pthread_mutex_unlock(&shm->arrayEquipas_mutex);
     
+
 }
 
 //Terminar
@@ -66,14 +77,35 @@ void *thread_receives_new_commands(void *arg){
         syntax = verificaSyntax(buffer);
         
         if(syntax == ADDCAR){
-            printf("Comando Aceite\n");
-            
-            parse(copy, ADDCAR);
-            
-            //adicionaCarro(buffer);
+            int r;
+            r = parse(copy, ADDCAR);
+            if(r != ERRO){
+                pthread_mutex_lock(&shm->mutex);
+                if(arrayCarros[r].visitado == 0){
+                    printf("ainda não foi visitado\n");
+                }
+                while (arrayCarros[r].visitado == 0)
+                {
+                    pthread_cond_signal(&shm->criaThreadCarro);
+                    pthread_cond_wait(&shm->threadCarroCriada,&shm->mutex);
+                }
+                pthread_mutex_unlock(&shm->mutex);
+                
+                printf("Comando Aceite\n");
+                
+            }
+            else
+                printf("WRONG COMMAND => %s\n", copy);
         }
         else if(syntax == START_RACE){
-            printf("Comando Aceite\n");
+            if(parse(copy, START_RACE) == 1){
+                printf("NEW COMMAND RECEIVED: START RACE\n");
+                write_log("NEW COMMAND RECEIVED: START RACE");
+            }
+            else{
+                printf("CANNOT START, NOT ENOUGH TEAMS\n");
+                write_log("CANNOT START, NOT ENOUGH TEAMS");
+            }
         }
         else if(syntax == EXIT){
             break;
@@ -99,10 +131,12 @@ int verificaSyntax(char *input){
     strcpy(copy, input);
 
 
-    printf("[VERIFY] %s\n", input);
+    //printf("[VERIFY] %s\n", input);
     char *token = strtok(input, " ");
     char *array[10];
 
+    
+        
 
     //fazer split por espaços e colocar num array
     while (token != NULL)
@@ -115,7 +149,10 @@ int verificaSyntax(char *input){
         i++;
     }
 
+
+    //TODO -> falta verificar se os valores não são strings
     if(strcmp("ADDCAR", array[0]) == 0){
+        
         
         if(strcmp("CAR:", array[3]) != 0 || strcmp("SPEED:", array[5]) != 0
         || strcmp("CONSUMPTION:", array[7]) != 0 || strcmp("RELIABILITY:", array[9]) != 0
@@ -145,17 +182,18 @@ int verificaSyntax(char *input){
     return ERRO;
 }
 
+//-> Verificar se há carros sufecientes para começar a corrida
+//-> Adicionar carro à respetiva equipa
 int parse(char *input, int type){
     int i;
-    car *carro;
     char team[BUF_SIZE];
     int carroId, speed, reliability;
     float consumption;
+    int carrosTotal = config->number_of_teams * config->cars_per_team;
+    
     
 
-
     if(type == ADDCAR){
-        //fgets(input, 100, stdin);
         char *token = strtok(input, " ");
         char *array[10];
 
@@ -168,11 +206,7 @@ int parse(char *input, int type){
             token = strtok(NULL, " ");
             i++;
         }
-        carro = malloc(sizeof(car));
-        if(carro == NULL){
-            printf("Error on malloc\n");
-            exit(-1);
-        }
+        
 
         array[2][strlen(array[2]) - 1] = '\0';
         strcpy(team, array[2]);
@@ -180,40 +214,128 @@ int parse(char *input, int type){
         carroId = atoi(array[4]);
         array[6][strlen(array[6]) - 1] = '\0';
         speed = atoi(array[6]);
+        array[8][strlen(array[8]) - 1] = '\0';
+        consumption = atof(array[8]);
+        array[10][strlen(array[10]) - 1] = '\0';
+        reliability = atoi(array[10]);     
 
         
+        int count = 0;
+        for(int i = 0; i < carrosTotal;i++){
+            if(strcmp(arrayCarros[i].team, team) == 0 && arrayCarros[i].estadoSlot == OCUPADO){
+                count++;
+            }
+        }
+        
+        if(count >= config->cars_per_team){
+            printf("Atingiu o limite de carros\n");
+            return ERRO;
+        }
+        else{
+            if(count == 0){
+                if(shm->totalEquipasSHM >= config->number_of_teams){
+                    return ERRO;
+                }
+                else{
+                    pthread_mutex_lock(&shm->arrayEquipas_mutex);
+                    int i = 0;
+                    while (arrayEquipas[i].estadoSlot == OCUPADO)
+                    {
+                        i++;
+                    }
+                    arrayEquipas[i].estadoSlot = OCUPADO;
+                    strcpy(arrayEquipas[i].nome, team);
+                    shm->totalEquipasSHM++;
+                    pthread_mutex_unlock(&shm->arrayEquipas_mutex);
+                }
+            }
+
+            pthread_mutex_lock(&shm->arrayCarros_mutex);
+
+            int var = 0;
+            int c = 0;
+            while (arrayCarros[var].estadoSlot == OCUPADO)
+            {
+                var++;
+            }
+
+            arrayCarros[var].id = carroId;
+            arrayCarros[var].speed = speed;
+            arrayCarros[var].consumption = consumption;
+            arrayCarros[var].reliability = reliability;
+            strcpy(arrayCarros[var].team, team);
+            arrayCarros[var].estadoSlot = OCUPADO;
+            arrayCarros[var].visitado = 0;
+
+            for(int i = 0; i < config->number_of_teams; i++){
+                if(strcmp(team, arrayEquipas[i].nome) == 0){
+                    c = i;
+                    arrayEquipas[i].numeroCarros++;
+                }
+            }
+            arrayCarros[var].idTeam = c;
+            shm->totalCarrosSHM++;
+            
+            pthread_mutex_unlock(&shm->arrayCarros_mutex);
+            return var;  
+            
+        }           
+        
     }
-    return 0;
+    else if(type == START_RACE){
+        int count = 0;
+
+        pthread_mutex_lock(&shm->arrayEquipas_mutex);
+        for(int i = 0; i < config->number_of_teams; i++){
+            if(arrayEquipas[i].estadoSlot == OCUPADO){
+                count++;
+            }
+        }
+        pthread_mutex_unlock(&shm->arrayEquipas_mutex);
+
+        if(count == config->number_of_teams){
+            return 1;
+        }
+        else{
+            return 0;
+        }
+    }
+    return ERRO;
     
 }
 
 
-void race_manag(config_struct *_config, shm_struct *_shm, team *array){
+void race_manag(config_struct *_config, shm_struct *_shm){
     config = _config;
     shm = _shm;
-    arrayEquipas = array;
+    arrayEquipas = (team *)(shm + 1);
+    arrayCarros = (car *)(arrayEquipas + config->number_of_teams);
     
     write_log("Race Manager starting");
     printf("Race Manager starting on PID: %d e o pai %d\n", getpid(), getppid());
     
     race_manag_init();
 
-    pthread_create(&thread_commands, NULL, thread_receives_new_commands, NULL);
-    /*
+    
+    
     for(int i= 0; i < config->number_of_teams; i++){
         if(fork() == 0){    
-            team_man(i, config, shm, arrayEquipas);
+            team_man(i, config, shm);
             exit(0);
             
         }
-    }*/
+    }
+    
+
+    pthread_create(&thread_commands, NULL, thread_receives_new_commands, NULL);
+    
     
 
     pthread_join(thread_commands, NULL);
     
     
     printf("Sou o race manager %d, vou esperar pelos filhos\n", getpid());
-    for(int i= 0; i < config->number_of_teams+1; i++){
+    for(int i= 0; i < config->number_of_teams; i++){
         wait(NULL);
         printf("processo team manager a terminar\n");
     }
