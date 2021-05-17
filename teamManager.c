@@ -13,18 +13,12 @@
 shm_struct *shm;// Shared memory
 config_struct *config;// Config struct
 team *arrayEquipas;
-
-Node header;
-Node headerCars;
-pthread_mutexattr_t attrmutex;
-
-
-
-
-
+car *arrayCarros;
 
 int carsTotal;
 int idTeam;
+pthread_t verificaSHM;
+
 
 
 
@@ -35,33 +29,47 @@ void *thread_sim_car(void *carro){
 }
 
 
-void create_cars(){
+void *create_cars(void *arg){
+    
     int r[carsTotal];
-    int t;
+    int thread;
 
-    pthread_t temp;
-    pthread_mutex_lock(&shm->mutex);
-    arrayEquipas[idTeam].ids = r;
-    
-    
-    for(int i = 0; i < carsTotal; i++){
-        r[i] = i;
-        printf("%d\n", i);
-        t = pthread_create(&arrayEquipas[idTeam].arrayCarros[i].thread, NULL, thread_sim_car, &r[i]);
-        if(t == 0)
-            printf("[%s] Thread Carro crida com o id %d\n",arrayEquipas[idTeam].nome,arrayEquipas[idTeam].arrayCarros[i].id);
-
-    }
-    pthread_mutex_unlock(&shm->mutex);
-    
-    
-    for(int j = 0; j < config->cars_per_team; j++){
+    while (1)
+    {
         pthread_mutex_lock(&shm->mutex);
-        temp = arrayEquipas[idTeam].arrayCarros[j].thread;
+        //shm->totalCarrosSHM < carsTotal
+        while (1)
+        {
+            pthread_cond_wait(&shm->criaThreadCarro,&shm->mutex);
+        }
+        
+        
+        //pthread_mutex_lock(&shm->arrayCarros_mutex);
+        for(int i = 0; i < carsTotal; i++){
+            //printf("entoru\n");
+            if(arrayCarros[i].idTeam == idTeam){
+                
+                if(arrayCarros[i].visitado == 0){
+                    r[i] = i;
+                    thread = pthread_create(&arrayCarros[i].thread, NULL, thread_sim_car, &r[i]);
+                    if(thread == 0){
+                        printf("[%d] Thread Carro crida com o id %d\n", arrayCarros[i].idTeam, arrayCarros[i].id);
+
+                        arrayCarros[i].visitado = 1;
+                        
+                    }
+                }
+            }
+        }
+        //pthread_mutex_unlock(&shm->arrayCarros_mutex);
+
+        pthread_cond_broadcast(&shm->threadCarroCriada);
         pthread_mutex_unlock(&shm->mutex);
-        pthread_join(temp, NULL);
-        //printf("EQUIPA %d | Thread a terminar carro %d\n", idTeam, j);
+        
     }
+    return NULL;
+    
+
     
 }
 
@@ -70,71 +78,29 @@ void create_cars(){
 
 void team_man_init(){
     
-
-    //printf("Equipa: %d\n", shm->arrayEquipas[idTeam].slot_id);
-
+    pthread_create(&verificaSHM, NULL, create_cars, NULL);
     
-    pthread_mutexattr_init(&attrmutex);
-    pthread_mutexattr_setpshared(&attrmutex, PTHREAD_PROCESS_SHARED);
-
-    pthread_mutex_init(&shm->mutex, &attrmutex);
-    
-    team *equipa;
-    car carros[config->cars_per_team];
-
-
-    equipa = malloc(sizeof(team));
-    if(equipa == NULL){
-        printf("Error on malloc\n");
-        exit(-1);
-    }
-
-    char n[100];
-    char buffer[20];
-    equipa->slot_id = idTeam;
-    
-    strcat(n, "Equipa ");
-    sprintf(buffer, "%d", idTeam);
-
-    strcat(n, buffer);
-
-    strcpy(equipa->nome,n );
-    
-    
-    
-    for(int i = 0; i < config->cars_per_team; i++){
-        carros[i].id = i;
-    }
-    equipa->arrayCarros = carros;
-    
-    pthread_mutex_lock(&shm->mutex);
-    arrayEquipas[idTeam] = *equipa;
-
-    pthread_mutex_unlock(&shm->mutex);
-    
-    create_cars();
-    
-    
-
-
-
+    pthread_exit(NULL);
 }
 
 
 
 
 //main
-void team_man(int id, config_struct *_config, shm_struct *_shm, team *array){
+void team_man(int id, config_struct *_config, shm_struct *_shm){
     shm = _shm;
-    arrayEquipas = array;
+    arrayEquipas = (team *)(shm + 1);
+    arrayCarros = (car *)(arrayEquipas + config->number_of_teams);
     write_log("Team Manager starting");
     printf("Team Manager starting on PID: %d\n", getpid());
     config = _config;
     idTeam = id;
-    carsTotal = config->cars_per_team;
+    carsTotal = config->cars_per_team * config->number_of_teams;
+
     //header = _header;
     sleep(1);
     team_man_init();
+
     
 
 
